@@ -23,6 +23,8 @@ class ListStack(Generic[T]):
             return None
         return self.items[-1]
 
+    def clear(self)-> None:
+        self.items.clear()
 
    
 
