@@ -16,3 +16,11 @@ class LinkedStack (Generic[T]):
             self.top = new_node
             self.count += 1
 
+    
+    def pop(self) -> TypeVar[T]:
+        if self.count == 0:
+            return None
+        data = self.top.data 
+        self.top = self.top.next 
+        self.count -= 1
+        return data
