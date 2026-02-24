@@ -9,6 +9,10 @@ class LinkedStack (Generic[T]):
     def __init__(self) -> None:
         self.top = None
         self.count : int = 0
-        
 
+    def push(self, data: T) -> None:
+            new_node = Node(data)
+            new_node.next = self.top
+            self.top = new_node
+            self.count += 1
 
