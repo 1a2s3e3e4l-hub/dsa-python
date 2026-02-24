@@ -11,11 +11,18 @@ class ListStack(Generic[T]):
         return len(self.items) == 0
     
     def push(self,item :T) -> None:
-        self.items.append (item)
+        self.items.append(item)
 
     def pop(self) -> T:
         if self.is_empty():
             raise IndexError("pop from Empty Stack ")
         return self.items.pop()
+    
+    def peek(self)-> Generic[T] :
+        if self.is_empty() :
+            return None
+        return self.items[-1]
+
 
    
+
