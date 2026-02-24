@@ -34,3 +34,6 @@ class LinkedStack (Generic[T]):
         
     def is_empty(self) -> bool:
         return self.count == 0
+
+    def size(self) -> int:
+        return self.count 
