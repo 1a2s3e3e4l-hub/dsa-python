@@ -37,3 +37,7 @@ class LinkedStack (Generic[T]):
 
     def size(self) -> int:
         return self.count 
+    
+    def clear(self):
+        self.top = None
+        self.count = 0
