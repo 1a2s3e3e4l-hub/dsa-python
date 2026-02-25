@@ -112,3 +112,17 @@ class DoublyLinkedList (Generic[T]):
             current = current.next 
             
         return False  
+    
+    def print_forward(self) -> None:
+        if self.head is None:
+            print("Empty List")
+            return
+            
+        current = self.head
+        elements = []
+        
+        while current:
+            elements.append(str(current.data))
+            current = current.next
+            
+        print(" <-> ".join(elements))
