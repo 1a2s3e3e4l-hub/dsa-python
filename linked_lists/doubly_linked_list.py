@@ -102,3 +102,13 @@ class DoublyLinkedList (Generic[T]):
                 current = current.next
         
         return current.data 
+
+    def contains(self, data: T) -> bool:
+        current = self.head
+        
+        while current:
+            if current.data == data:
+                return True  
+            current = current.next 
+            
+        return False  
