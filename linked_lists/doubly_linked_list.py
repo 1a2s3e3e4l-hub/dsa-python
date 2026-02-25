@@ -91,3 +91,14 @@ class DoublyLinkedList (Generic[T]):
                 return True
             current = current.next
         return False
+
+    def get_at(self, index: int) -> Generic[T]:
+        if index < 0 or index >= self.size:
+            return None 
+            
+        current = self.head
+        
+        for _ in range(index):
+                current = current.next
+        
+        return current.data 
