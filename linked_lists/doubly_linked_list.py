@@ -70,3 +70,24 @@ class DoublyLinkedList (Generic[T]):
         current.next = new_node
         
         self.size += 1
+
+    def delete(self, data: T) -> bool:
+        current = self.head
+        while current:
+            if current.data == data:
+                if current == self.head:
+                    self.head = current.next
+                    if self.head: 
+                        self.head.prev = None
+                    else: self.tail = None
+                elif current == self.tail:
+                    self.tail = current.prev
+                    self.tail.next = None
+                else:
+                    current.prev.next = current.next
+                    current.next.prev = current.prev
+                
+                self.size -= 1
+                return True
+            current = current.next
+        return False
